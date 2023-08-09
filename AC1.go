@@ -70,7 +70,7 @@ func diaSemana(num int) string{
 
 
 func e_bissexto(n int) bool{
-	    if (n%4 == 0 && n%100 != 0){
+	    if (n%4 == 0 && n%100 != 0) || n%400 == 0 {
         return true
     } else {
         return false
