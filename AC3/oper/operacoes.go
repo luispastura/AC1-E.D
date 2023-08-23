@@ -35,4 +35,25 @@ func EditaEmail(listadeContatos *[5]contatos.Contato, ind int, novoEmail string)
 	listadeContatos[ind].AlterarEmail(novoEmail)
 }
 
-func ContatoArmazenados()
+func ContatoArmazenados(listadeContatos *[5]contatos.Contato) {
+	vazia := true
+
+	for i, contato := range listadeContatos {
+		if contato == (contatos.Contato{}) {
+			break
+		}
+		if vazia {
+			fmt.Println("\n----Lista de Contatos Salvos")
+			vazia = false
+		}
+
+		fmt.Printf("\n------------------------------")
+		fmt.Printf("\nContato nº %d\n", i+1)
+		fmt.Printf("Nome: %s\n", contato.Nome)
+		fmt.Printf("Email: %s\n", contato.Email)
+	}
+
+	if vazia {
+		fmt.Println("\n----Lista de Contatos Vazia----")
+	}
+}
